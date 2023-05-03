@@ -1,4 +1,4 @@
-class calculator{
+class Calculator{
     screen;
     id;
     element;
@@ -15,25 +15,25 @@ class calculator{
         this.element.innerHTML = 
         `<input type="text" disabled>
         <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>0</button>
-            <button>*</button>
-            <button>-</button>
-            <button>+</button>
-            <button>=</button>
+            <button class="btn ${this.color}">1</button>
+            <button class="btn ${this.color}">2</button>
+            <button class="btn ${this.color}">3</button>
+            <button class="btn ${this.color}">4</button>
+            <button class="btn ${this.color}">5</button>
+            <button class="btn ${this.color}">6</button>
+            <button class="btn ${this.color}">7</button>
+            <button class="btn ${this.color}">8</button>
+            <button class="btn ${this.color}">9</button>
+            <button class="btn ${this.color}">0</button>
+            <button class="btn ${this.color}">*</button>
+            <button class="btn ${this.color}">-</button>
+            <button class="btn ${this.color}">+</button>
+            <button class="btn ${this.color}">=</button>
         </div>
         `
 
         this.screen = document.querySelector('#'+this.id+'input');
-        let btns = document.querySelectorAll('#'+this.id+'button')
+        let btns = document.querySelectorAll('#'+this.id+'button');
         btns.forEach((el)=>{
             el.addEventListener('click',(e)=>{
                 if(e.target.innerHTML == '='){
@@ -45,10 +45,10 @@ class calculator{
                     }
                     return;
                 }
-                this.screen.value += e.target.innerHTML
+                this.screen.value += e.target.innerHTML;
             })
         })
     }
 }
 
-new calculator(document.querySelector('#show'))
+new Calculator(document.querySelector('#show'),'btn-success')
